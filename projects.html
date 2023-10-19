@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI&ML Research and Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="publications.css">
+    <!-- <link rel="text/stylesheet" src="script.js"> -->
+    <style>
+        .topic {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            background-color: #3AAFA9;
+        }
+        .topic-title {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            background-color: #3AAFA9;
+            color: white;
+            font-family:serif;
+            font-size: 22px;
+        }
+        .toggle-button {
+            background-color: #pink;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .topic-details {
+            display: none;
+            color: black;
+        }
+        .view-label {
+            display: none;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .view-input:checked + .topic-title .view-label {
+            display: inline-block;
+        }
+        .view-input:checked + .topic-title + .topic-details {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to R&D of AI&ML</h1>
+    </header>
+    <center>
+    <nav>
+            <!-- <a href="#"><img src = "img/logo.png" class="logo" alt = ""></a> -->
+                <ul id = "navbar">
+                    <li><a class = "active" href = "index.html">Home</a></li>
+                    <li><a href = "about.html">About R&D</a></li>
+                    <li><a href = "faculty.html">Domain areas</a></li>
+                    <li><a href = "phd.html">Awards</a></li>
+                    <li><a href = "conferences.html">Conferences</a></li>
+                    <li><a href = "publications.html">Publications</a></li>
+                    <li><a href = "projects.html">Projects</a></li>
+                </ul>
+    </nav>
+    </center>
+
+    <main>
+        <div style="text-align: center;">
+        <h1>Research Projects</h2>
+    </div>
+    </main>    
+    <div class="t1">
+         <div class="topic">
+          <div class="topic-title" onclick="toggleDetails(this)">Project 1
+             <span class="toggle-button">+</span>
+         </div>
+        <div class="topic-details">
+            <p>Project Content</p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <div class="t1">
+         <div class="topic">
+          <div class="topic-title" onclick="toggleDetails(this)">Project 2
+             <span class="toggle-button">+</span>
+         </div>
+        <div class="topic-details">
+            <p>Project Content</p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <div class="t1">
+         <div class="topic">
+          <div class="topic-title" onclick="toggleDetails(this)">Project 3
+             <span class="toggle-button">+</span>
+         </div>
+        <div class="topic-details">
+            <p>Project Content</p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <footer class = "section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> plot-1368 Nizampet Road, Hyderabad</p>
+            <p><strong>Phone:</strong> (+91) 4856 865 866 </p>
+            <p><strong>Hours:</strong> 10:00 - 16:00 (Mon - Fri)</p>
+        </div>
+        
+       
+
+        <div class="col install">
+            <!-- <h4>About</h4> -->
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+    </footer>
+    <script>
+        function toggleDetails(element) {
+            const details = element.nextElementSibling;
+            const toggleButton = element.querySelector('.toggle-button');
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                toggleButton.textContent = '+';
+            } else {
+                details.style.display = 'block';
+                toggleButton.textContent = '-';
+            }
+        }
+    </script>
+</body>
+</html>
