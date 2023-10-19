@@ -10,14 +10,14 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: black;
     color: #fff;
     text-align: center;
     padding: 20px;
 }
 
 nav {
-    background-color: #444;
+    background-color: #3AAF9;
     padding: 10px;
 }
 
