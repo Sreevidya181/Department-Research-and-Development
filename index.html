@@ -11,16 +11,17 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to R&D of AI&ML</h1>
+        <img src = "bvrit-hyderabad-engineering-women-college-logo-2.jpg" alt = 'logo' class = "logo">
+        <h1>Research and Development</h1>
     </header>
     <center>
-    <nav>
+    <nav >
             <!-- <a href="#"><img src = "img/logo.png" class="logo" alt = ""></a> -->
                 <ul id = "navbar">
                     <li><a class = "active" href = "index.html">Home</a></li>
                     <li><a href = "about.html">About R&D</a></li>
                     <li><a href = "faculty.html">Domain areas</a></li>
-                    <li><a href = "phd.html">Qualifications</a></li>
+                    <li><a href = "qualifications.html">Qualifications</a></li>
                     <li><a href = "conferences.html">Conferences</a></li>
                     <li><a href = "publications.html">Publications</a></li>
                     <li><a href = "projects">Projects</a></li>
@@ -29,8 +30,38 @@
     </center>
 
     <main>
+        <div>
         <h2>Welcome to the R&D Department</h2>
         <p>Welcome to the Research and Development department of our college. We are committed to pushing the boundaries of knowledge and innovation in various domains.</p>
+        </div>
+
+        <div class = 'login-container'>
+        <div class="login-form">
+            <h2>Faculty Login</h2>
+            <form method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <input type="submit" value="Login" id = 'login-button'>
+            </form>
+        </div>
+
+        <div class="login-form">
+            <h2>Student Login</h2>
+            <form method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <input type="submit" value="Login" id = 'login-button'>
+            </form>
+        </div>
+        </div>
     </main>    
 
     <footer class = "section-p1">
