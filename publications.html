@@ -6,31 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI&ML Research and Development</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="publications.css">
-    
-     <style>
-        
+
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/f2/05/52/f2055287869555b7efa535223ddc059a.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .main-container {
+            text-align: center;
+            display: flex;
+            margin-right: 200px;
+            margin-left: 200px;
+            background-color: white;
+
+        }
+
+        .publications-title {
+           background-color: white;
+    margin-bottom: 20px;
+    width: 100%;
+    display: block;
+        }
+
+        .add-button {
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #publications-container {
+            overflow-y: auto;
+            max-height: 400px; /* Set a maximum height to enable scrolling */
+        }
+
         .topic {
             border: 1px solid #ddd;
             padding: 10px;
             margin: 10px;
-            background-color: seagreen;
+            background-color: #3AAFA9;
         }
 
         .topic-title {
             cursor: pointer;
             display: flex;
-            justify-content: space-between; 
-            align-items: center; 
-            background-color: seagreen;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3AAF;
             color: white;
-            font-family:serif;
+            font-family: serif;
             font-size: 22px;
         }
 
         .toggle-button {
-            background-color: #pink;
+            background-color: black;
             color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
@@ -41,9 +76,7 @@
             display: none;
             color: black;
         }
-    
 
-        
         .view-label {
             display: none;
             cursor: pointer;
@@ -61,36 +94,55 @@
             display: block;
         }
 
+        #add-form {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        #add-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #add-form button {
+            margin-top: 15px;
+            cursor: pointer;
+        }
     </style>
-    
+
 </head>
 <body>
-     <header>
-        <img src = "bvrit-hyderabad-engineering-women-college-logo-2.jpg" alt = 'logo' class = "logo">
-        <h1>Research and Development</h1>
-    </header>
-    <center>
+<header>
+    <img src="bvrith logo.jpg" alt='logo' class="logo">
+    <h1>Research and Development</h1>
+</header>
+<center>
     <nav>
-            
-                <ul id = "navbar">
-                    <li><a class = "active" href = "index.html">Home</a></li>
-                    <li><a href = "about.html">About R&D</a></li>
-                    <li><a href = "faculty.html">Domain areas</a></li>
-                    <li><a href = "qualifications.html">Qualifications</a></li>
-                    <li><a href = "conferences.html">Conferences</a></li>
-                    <li><a href = "publications.html">Publications</a></li>
-                    <li><a href = "projects">Projects</a></li>
-                </ul>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About R&D</a></li>
+            <li><a href="domain.html">Domain areas</a></li>
+            <li><a href="qualifications.html">Qualifications</a></li>
+            <li><a href="conferences.html">Conferences</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
     </nav>
-    </center>
-    <main>
-    <div style="text-align: center;">
-        <h1>Publications</h2>
+</center>
+    <main class="main-container">
+    <div class="publications-title">
+        <h1>Publications</h1></div><div>
+        <button class="add-button" onclick="showAddForm()">Add</button>
     </div>
-</main>
+    </main>
 
-    
-    
     <div class="t1">
          <div class="topic">
           <div class="topic-title" onclick="toggleDetails(this)">
@@ -164,37 +216,78 @@
         
     </div>
     
-    
 
-    <footer class="section-p1">
-        <div class="col">
-            <h4>Contact</h4>
-            <p><strong>Address:</strong> plot-1368 Nizampet Road, Hyderabad</p>
-            <p><strong>Phone:</strong> (+91) 4856 865 866 </p>
-            <p><strong>Hours:</strong> 10:00 - 16:00 (Mon - Fri)</p>
-        </div>
-        
-        <div class="col install">
-            <!-- <h4>About</h4> -->
-            <a href="#">About Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
-        </div>
-    </footer>
-    <script>
-        function toggleDetails(element) {
-            const details = element.nextElementSibling;
-            const toggleButton = element.querySelector('.toggle-button');
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-                toggleButton.textContent = '+';
-            } else {
-                details.style.display = 'block';
-                toggleButton.textContent = '-';
-            }
+
+<!-- Form for adding a new publication -->
+<div id="add-form">
+    <label for="add-title">Title:</label>
+    <input type="text" id="add-title" name="add-title" required><br>
+
+    <label for="add-authors">Authors:</label>
+    <input type="text" id="add-authors" name="add-authors" required><br>
+
+    <label for="add-year">Published Year:</label>
+    <input type="text" id="add-year" name="add-year" required><br>
+
+    <label for="add-type">Type:</label>
+    <input type="text" id="add-type" name="add-type" required><br>
+
+    <button onclick="savePublication()">Save</button>
+    <button onclick="cancelAddForm()">Cancel</button>
+</div>
+
+
+
+<script>
+    function toggleDetails(element) {
+        const details = element.nextElementSibling;
+        const toggleButton = element.querySelector('.toggle-button');
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+            toggleButton.textContent = '+';
+        } else {
+            details.style.display = 'block';
+            toggleButton.textContent = '-';
         }
-    </script>
+    }
+
+    function showAddForm() {
+        document.getElementById("add-form").style.display = "block";
+    }
+
+    function cancelAddForm() {
+        document.getElementById("add-form").style.display = "none";
+    }
+
     
+    function savePublication() {
+    const title = document.getElementById("add-title").value;
+    const authors = document.getElementById("add-authors").value;
+    const year = document.getElementById("add-year").value;
+    const type = document.getElementById("add-type").value;
+
+    const container = document.querySelector(".t1"); // Use the appropriate selector for your container
+
+    const newPublication = document.createElement("div");
+    newPublication.className = "topic";
+    newPublication.innerHTML = `
+        <div class="topic-title" onclick="toggleDetails(this)">
+            ${title} <span class="toggle-button">+</span>
+        </div>
+        <div class="topic-details">
+            <p>Authors: ${authors}</p>
+            <p>Published Year: ${year}</p>
+            <p>Type: ${type}</p>
+        </div>
+    `;
+
+    container.appendChild(newPublication);
+    cancelAddForm();
+}
+
+</script>
+
 </body>
 </html>
+
+
