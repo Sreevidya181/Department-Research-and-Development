@@ -6,37 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI&ML Research and Development</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="publications.css">
-    <!-- <link rel="text/stylesheet" src="script.js"> -->
+
     <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/f2/05/52/f2055287869555b7efa535223ddc059a.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .main-container {
+            text-align: center;
+            display: flex;
+            margin-right: 200px;
+            margin-left: 200px;
+            background-color: white;
+
+        }
+
+        .projects-title {
+           background-color: white;
+    margin-bottom: 20px;
+    width: 100%;
+    display: block;
+        }
+
+        .add-button {
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #projects-container {
+            overflow-y: auto;
+            max-height: 400px; /* Set a maximum height to enable scrolling */
+        }
+
         .topic {
             border: 1px solid #ddd;
             padding: 10px;
             margin: 10px;
             background-color: #3AAFA9;
         }
+
         .topic-title {
             cursor: pointer;
             display: flex;
-            justify-content: space-between; 
-            align-items: center; 
-            background-color: #3AAFA9;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3AAF;
             color: white;
-            font-family:serif;
+            font-family: serif;
             font-size: 22px;
         }
+
         .toggle-button {
-            background-color: #pink;
+            background-color: black;
             color: #fff;
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
         }
+
         .topic-details {
             display: none;
             color: black;
         }
+
         .view-label {
             display: none;
             cursor: pointer;
@@ -45,107 +85,179 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+
         .view-input:checked + .topic-title .view-label {
             display: inline-block;
         }
+
         .view-input:checked + .topic-title + .topic-details {
             display: block;
         }
 
+        #add-form {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        #add-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #add-form button {
+            margin-top: 15px;
+            cursor: pointer;
+        }
     </style>
+
 </head>
 <body>
-     <header>
-        <img src = "bvrit-hyderabad-engineering-women-college-logo-2.jpg" alt = 'logo' class = "logo">
-        <h1>Research and Development</h1>
-    </header>
-    <center>
+<header>
+    <img src="bvrith logo.jpg" alt='logo' class="logo">
+    <h1>Research and Development</h1>
+</header>
+<center>
     <nav>
-            <!-- <a href="#"><img src = "img/logo.png" class="logo" alt = ""></a> -->
-                <ul id = "navbar">
-                    <li><a class = "active" href = "index.html">Home</a></li>
-                    <li><a href = "about.html">About R&D</a></li>
-                    <li><a href = "faculty.html">Domain areas</a></li>
-                    <li><a href = "qualification.html">Qualifications</a></li>
-                    <li><a href = "conferences.html">Conferences</a></li>
-                    <li><a href = "publications.html">Publications</a></li>
-                    <li><a href = "projects.html">Projects</a></li>
-                </ul>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About R&D</a></li>
+            <li><a href="domain.html">Domain areas</a></li>
+            <li><a href="qualifications.html">Qualifications</a></li>
+            <li><a href="conferences.html">Conferences</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
     </nav>
-    </center>
-
-    <main>
-        <div style="text-align: center;">
-        <h1>Research Projects</h2>
+</center>
+    <main class="main-container">
+    <div class="projects-title">
+        <h1>Projects</h1></div><div>
+        <button class="add-button" onclick="showAddForm()">Add</button>
     </div>
-    </main>    
+    </main>
+
     <div class="t1">
          <div class="topic">
-          <div class="topic-title" onclick="toggleDetails(this)">Project 1
-             <span class="toggle-button">+</span>
+          <div class="topic-title" onclick="toggleDetails(this)">
+            Machine Learning-Employee Termination <span class="toggle-button">+</span>
          </div>
         <div class="topic-details">
-            <p>Project Content</p>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
-    </div>
-    <div class="t1">
-         <div class="topic">
-          <div class="topic-title" onclick="toggleDetails(this)">Project 2
-             <span class="toggle-button">+</span>
-         </div>
-        <div class="topic-details">
-            <p>Project Content</p>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
-    </div>
-    <div class="t1">
-         <div class="topic">
-          <div class="topic-title" onclick="toggleDetails(this)">Project 3
-             <span class="toggle-button">+</span>
-         </div>
-        <div class="topic-details">
-            <p>Project Content</p>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
-    </div>
-    <footer class = "section-p1">
-        <div class="col">
-            <h4>Contact</h4>
-            <p><strong>Address:</strong> plot-1368 Nizampet Road, Hyderabad</p>
-            <p><strong>Phone:</strong> (+91) 4856 865 866 </p>
-            <p><strong>Hours:</strong> 10:00 - 16:00 (Mon - Fri)</p>
-        </div>
-        
-       
+            <p>Description:The key challenges is to identify whom to terminate and keep the productivity of the company in an increasing order</p>
+            <p>Tech Stack/Models: Classification models,Gradio</p>
 
-        <div class="col install">
-            <!-- <h4>About</h4> -->
-            <a href="#">About Us</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
         </div>
+    </div>
+    <div class="topic">
+        <div class="topic-title" onclick="toggleDetails(this)">
+            WEB DEVELOPMENT-Sweet Mart Food Shop
 
-    </footer>
-    <script>
-        function toggleDetails(element) {
-            const details = element.nextElementSibling;
-            const toggleButton = element.querySelector('.toggle-button');
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-                toggleButton.textContent = '+';
-            } else {
-                details.style.display = 'block';
-                toggleButton.textContent = '-';
-            }
+        <span class="toggle-button">+</span>
+        </div>
+        <div class="topic-details">
+            <p>Description:Developed a Web Application (Sweet Mart Food Shop,Online Food Ordering Application)</p>
+            <p>Tech Stack/Models:Node JS, Express JS,JavaScript,HTML and CSS</p>
+            
+        </div>
+    </div>
+    <div class="topic">
+        <div class="topic-title" onclick="toggleDetails(this)">
+            Machine Learning-Scrabble Game 
+            <span class="toggle-button">+</span>
+        </div>
+        <div class="topic-details">
+            <p>Description:Implemented Machine Learning Model to predict human ratings </p>
+            <p>Tech Stack/Models:Linear Regression,Random Forest Regressor,Gradient Boosting Regressor</p>
+        </div>
+    </div>
+    <div class="topic">
+        <div class="topic-title" onclick="toggleDetails(this)">
+            Web Development-Jewellery Website
+            <span class="toggle-button">+</span>
+        </div>
+        <div class="topic-details">
+            <p>Description:Designed an online jewellery Website featuring variety of jewellery</p>
+            <p>Tech Stack/Models:HTML,CSS,Javascript,Express.js,Node.js</p>
+        </div>
+    </div>
+    
+    
+    
+
+
+<!-- Form for adding a new publication -->
+<div id="add-form">
+    <label for="add-title">Title:</label>
+    <input type="text" id="add-title" name="add-title" required><br>
+
+    <label for="add-description">Description:</label>
+    <input type="text" id="add-description" name="add-description" required><br>
+
+    <label for="add-tech">Tech Stack/Models:</label>
+    <input type="text" id="add-tech" name="add-tech" required><br>
+
+   
+
+    <button onclick="saveProjects()">Save</button>
+    <button onclick="cancelAddForm()">Cancel</button>
+</div>
+
+
+
+<script>
+    function toggleDetails(element) {
+        const details = element.nextElementSibling;
+        const toggleButton = element.querySelector('.toggle-button');
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+            toggleButton.textContent = '+';
+        } else {
+            details.style.display = 'block';
+            toggleButton.textContent = '-';
         }
-    </script>
+    }
+
+    function showAddForm() {
+        document.getElementById("add-form").style.display = "block";
+    }
+
+    function cancelAddForm() {
+        document.getElementById("add-form").style.display = "none";
+    }
+
+    
+    function saveProjects() {
+    const title = document.getElementById("add-title").value;
+    const description = document.getElementById("add-description").value;
+    const tech = document.getElementById("add-tech").value;
+
+    const container = document.querySelector(".t1"); // Use the appropriate selector for your container
+
+    const newProjects = document.createElement("div");
+    newProjects.className = "topic";
+    newProjects.innerHTML = `
+        <div class="topic-title" onclick="toggleDetails(this)">
+            ${title} <span class="toggle-button">+</span>
+        </div>
+        <div class="topic-details">
+            <p>Description: ${description}</p>
+            <p>Tech Stack/Models: ${tech}</p>
+        </div>
+    `;
+
+    container.appendChild(newProjects);
+    cancelAddForm();
+}
+
+
+</script>
+
 </body>
 </html>
+
